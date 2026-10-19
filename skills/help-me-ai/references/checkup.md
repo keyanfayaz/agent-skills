@@ -47,4 +47,4 @@ If they say yes, do it now (it becomes this session's change) or, if it's bigger
 
 Add, drop or reorder path items to match what you found, and say why for each change. Keep 3–5 open items, with a checkup last. Ask them to approve, then save it to the profile.
 
-Then wrap up as the front door describes.
+Then wrap up as the skill's main instructions describe.

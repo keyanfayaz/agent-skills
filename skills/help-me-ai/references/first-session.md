@@ -55,4 +55,4 @@ Rules:
 - Ask them to approve, reorder or swap items. Their order wins.
 - Save the agreed path to the profile, with the kind of each item in brackets.
 
-Then wrap up as the front door describes.
+Then wrap up as the skill's main instructions describe.

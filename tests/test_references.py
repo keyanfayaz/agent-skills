@@ -46,6 +46,8 @@ class Environments(unittest.TestCase):
 SESSION_GUIDES = {
     "first-session.md": ["Intake", "Quick win", "Snapshot", "Propose the path"],
     "checkup.md": ["What to read", "What to look for", "Levels", "Top 3 moves", "Update the path"],
+    "build-skill.md": ["Find candidates", "Rank", "Triage", "Capture the steps",
+                       "Write the SKILL.md", "Install", "Test run"],
 }
 
 
