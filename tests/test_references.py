@@ -1,7 +1,7 @@
 import re
 import unittest
 
-from skillcheck import SKILL_DIR, headings
+from skillcheck import SKILL_DIR, headings, own_file_mentions
 
 REFS = SKILL_DIR / "references"
 TOOL_SECTIONS = ["Claude Code", "Codex", "Claude chat app"]
@@ -41,6 +41,26 @@ class Environments(unittest.TestCase):
         for tool in TOOL_SECTIONS:
             sources = body[tool].split("**Sources**", 1)[1]
             self.assertIn("https://", sources, f"{tool} has no source links")
+
+
+SESSION_GUIDES = {
+    "first-session.md": ["Intake", "Quick win", "Snapshot", "Propose the path"],
+    "checkup.md": ["What to read", "What to look for", "Levels", "Top 3 moves", "Update the path"],
+}
+
+
+class SessionGuides(unittest.TestCase):
+    def test_reference_headings(self):
+        for name, expected in SESSION_GUIDES.items():
+            self.assertEqual(headings((REFS / name).read_text()), expected, name)
+
+    def test_references_are_one_level(self):
+        for path in sorted(REFS.glob("*.md")):
+            self.assertEqual(own_file_mentions(path.read_text()), set(), path.name)
+
+    def test_reference_length(self):
+        for path in sorted(REFS.glob("*.md")):
+            self.assertLessEqual(len(path.read_text().splitlines()), 200, path.name)
 
 
 if __name__ == "__main__":
