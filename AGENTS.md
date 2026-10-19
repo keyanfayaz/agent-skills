@@ -21,7 +21,7 @@ tests/                     standard-library checks, scenario fixtures and checkl
 
 ## Rules
 
-- **Agent Skills format** (agentskills.io): `name` is 1–64 characters, lowercase letters, digits and single hyphens, and matches the folder; `description` is 1–1024 characters and says what the skill does and when to use it; `SKILL.md` stays under 500 lines; reference files are one level deep. Only `SKILL.md` points to other files.
+- **Agent Skills format** (agentskills.io): `name` is 1–64 characters, lowercase letters, digits and single hyphens, and matches the folder; `description` is at most 200 characters (the Claude app's limit; the standard allows 1024) and says what the skill does and when to use it; `SKILL.md` stays under 500 lines; reference files are one level deep. Only `SKILL.md` points to other files.
 - **No dependencies on client machines.** Nothing under `skills/` may tell an agent to run git, Node/npx, Python, pip, brew or uv. Shell use is limited to `curl`, `tar`, `unzip`, PowerShell and basic file commands. Git is for maintaining this repo only.
 - **Client-facing language** is plain and jargon-free. The skill never shows the client its own file names, or the words "mode", "rubric" or "access level".
 - **Keep the repo client-readable.** Anything committed may be read by a client. Don't commit tool-specific working folders or notes; working files go in the gitignored `.plans/` folder.
