@@ -4,6 +4,8 @@ Every assessment looks at the same six areas, so progress can be compared over t
 
 Recommendations are your own judgment; this list only fixes what you look at.
 
+The area names are for you. With the client, use plain words: Context is "how well it knows you", Reuse is "work you repeat", Connections is "connected apps", Delegation is "handing off whole tasks", Safety is "keeping things safe", and Habits is "how you use AI day to day".
+
 ## Context
 
 Does the agent know who they are and how they work?

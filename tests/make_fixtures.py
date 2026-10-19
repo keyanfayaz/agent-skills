@@ -140,6 +140,8 @@ def _sam(home: Path) -> None:
                       (40, "Rewrite our services page intro."),
                       (52, "Compare these two quotes from printers.")):
         _claude_session(work, NOW - timedelta(days=days), [ask])
+    for n in range(45):  # pushes the total past the 50-session sampling cap
+        _claude_session(work, NOW - timedelta(days=1 + n * 59 / 45, hours=n), [f"Quick question {n + 1}: tidy this paragraph."])
 
 
 def _alex(home: Path) -> None:

@@ -21,14 +21,14 @@ Say briefly why you're asking when it isn't obvious. Mirror their words back —
 
 ## Quick win
 
-Pick the single most useful thing you can finish in about 10 minutes, based on the evidence and their answers.
+Pick the single most useful thing you can finish in about 10 minutes. Start from their answer to "what would make today's session worth it": if it can be done (or started) in 10 minutes, that is the quick win — their wish beats the default below. Otherwise use the evidence and their other answers.
 
 **Default: teach the agent who they are.** Draft a short "About me and how I like to work" block, under 25 lines: who they are, what they work on and for whom, how they like answers (length, tone, format), tools they use, and their boundaries. Use their words. Mark any line you had to guess (tone, length, format) and ask them to confirm or fix those lines when they look at the draft. Show the draft and change it until they're happy. Then:
 
 - Claude Code: add it to `~/.claude/CLAUDE.md`.
 - Codex: add it to the personal instructions file Codex actually uses — usually `~/.codex/AGENTS.md`, but `AGENTS.override.md` if that one is in use, inside `CODEX_HOME` if it's set (see the per-tool facts).
 - Both tools in use: add the same block to both.
-- Chat app: give it as finished text to paste into their personal preferences in Claude's settings, and tell them exactly where that is.
+- Chat app: give it as finished text to paste into their personal preferences in Claude's settings, and tell them exactly where that is. First ask whether that box already has text; if it does, have them add yours at the end instead of replacing what's there.
 
 If the file already exists, back it up and add your block at the end. Never rewrite, reorder or remove what's there. Keep task procedures (a checklist or the steps for one particular job) out of personal instructions — those become a skill.
 

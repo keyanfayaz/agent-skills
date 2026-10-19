@@ -24,7 +24,7 @@ levels_after:         # copy of the newest levels entry in the profile
 # Summary for {{consultant}}
 
 <!--
-Never include: conversation content, file contents, other people's names, secrets or anything that looks like one.
+Never include: conversation content, file contents, other people's or companies' names (including in the client's own words), secrets or anything that looks like one.
 Show the draft to the client, let them edit or remove anything, and save it only once they approve.
 The client sends it themselves. Never send it.
 -->

@@ -37,7 +37,7 @@ Interview them, one question at a time:
 4. What good output looks like. Ask for a real past example; it's worth more than any description.
 5. What to avoid, and who sees the result.
 
-Summarise the procedure in a few lines and get a yes before writing anything.
+If they already use a checklist or template for this task, keep every item in the skill, in their words; ask before dropping or merging any. Summarise the procedure in a few lines and get a yes before writing anything.
 
 ## Write the SKILL.md
 
