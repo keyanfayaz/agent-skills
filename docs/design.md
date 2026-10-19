@@ -75,7 +75,7 @@ The agent never needs git, Node or Python to install.
 **Other routes:**
 - **Technical clients with Node:** `npx skills add keyanfayaz/agent-skills --skill help-me-ai -g`.
 - **Codex:** the built-in `$skill-installer` may also work from the repo URL (to verify; see section 13).
-- **Chat app:** download `help-me-ai.zip` from the same link and upload it in Settings.
+- **Chat app:** download `help-me-ai.zip` from the same link and upload it under Customize > Skills ("Code execution and file creation" must be on in Settings > Capabilities).
 
 **Updating:** paste the same prompt again. Only the skill folder is replaced. `~/help-me-ai/` (profile, reports) is never touched.
 
@@ -290,7 +290,7 @@ The repo is a growing collection. Future standalone skills (other offerings, or 
 
 ## 13. To verify during implementation
 
-These are checked against current official docs while building, and recorded in `references/environments.md`:
+Checked against official docs on 2026-10-19 and recorded in `references/environments.md`. The zip must contain the skill folder; chat-app uploads live under Customize > Skills; Codex asks for approval for network access and writes outside the workspace. Re-check these before each release:
 - Codex global instructions file location (expected `~/.codex/AGENTS.md`) and session history location/format (expected `~/.codex/sessions/`).
 - Claude Code session history format (`~/.claude/projects/**/*.jsonl`), the user-level skills folder (`~/.claude/skills/`), and whether new skills are picked up without a restart.
 - Claude chat app: the exact settings path for uploading a skill zip; whether file downloads and Projects behave as section 8.5 assumes.
