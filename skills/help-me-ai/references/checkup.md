@@ -27,6 +27,7 @@ With interview only, ask the Ask questions for each area instead, one at a time,
 - **Anything that looks like a key, token or password** — a safety finding. Say where it is; never repeat it.
 - **Work in their role that never shows up** — habits to grow.
 - **Anything built in earlier sessions** — is it being used? A skill that never triggers, or instructions that are out of date, is a finding too.
+- **The profile's Setup list** — does everything it lists (skills, backups, folders) still exist? Say what's gone and update the list.
 
 ## Levels
 

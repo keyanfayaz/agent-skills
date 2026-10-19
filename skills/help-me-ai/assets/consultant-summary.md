@@ -3,16 +3,16 @@ schema: 1
 date: ""              # YYYY-MM-DD
 client: ""            # name or alias — the client chooses
 tools: []
-access: ""            # full | partial | conversation
+access: ""            # what you could see: computer | apps | chat
 skill_version: ""
-levels_before:        # from the previous summary or the first snapshot
+levels_before:        # from the previous summary; the first time, the first session's snapshot
   context: ""
   reuse: ""
   connections: ""
   delegation: ""
   safety: ""
   habits: ""
-levels_after:
+levels_after:         # copy of the newest levels entry in the profile
   context: ""
   reuse: ""
   connections: ""

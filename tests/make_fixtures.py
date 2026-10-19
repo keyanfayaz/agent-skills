@@ -171,13 +171,15 @@ def _jordan(home: Path) -> None:
     data = home / "help-me-ai"
     (data / "reports").mkdir(parents=True)
     first, second = NOW - timedelta(days=24), NOW - timedelta(days=10)
+    (data / "backups" / f"{first:%Y-%m-%d}").mkdir(parents=True)
+    (data / "backups" / f"{first:%Y-%m-%d}" / "CLAUDE.md").write_text("")
     (data / "reports" / f"{first:%Y-%m-%d}-session-1.md").write_text("# Session 1: Getting started\n")
     (data / "reports" / f"{second:%Y-%m-%d}-session-2.md").write_text("# Session 2: Weekly pipeline review skill\n")
     (data / "profile.md").write_text(f"""---
 schema: 1
 name: "Jordan"
 tools: [claude-code]
-access: "full"
+access: "computer"
 skill_version: "0.1.0"
 levels:
   - date: "{first:%Y-%m-%d}"

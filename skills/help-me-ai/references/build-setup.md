@@ -19,7 +19,7 @@ Play back a short picture of their week in their words and check it before build
 
 Make sure their personal instructions reflect the picture you just agreed: roles, priorities, how they like results, boundaries. Add to the existing file (back it up first); never rewrite or reorder what's there. Keep the whole file short — a page at most — because it's read in every session.
 
-- Claude Code: `~/.claude/CLAUDE.md`. Codex: `~/.codex/AGENTS.md`. Both if they use both.
+- Claude Code: `~/.claude/CLAUDE.md`. Codex: the personal instructions file it actually uses — usually `~/.codex/AGENTS.md` (see the per-tool facts for the exceptions). Both if they use both.
 - Chat app: finished text for their personal preferences, plus separate text for each Project's instructions.
 
 ## Structure

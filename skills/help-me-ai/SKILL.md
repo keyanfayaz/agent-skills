@@ -37,7 +37,7 @@ Before asking anything, check what *exists* — names and dates only, never cont
 - **Connected tools** you can see.
 - **A profile from earlier sessions:** `~/help-me-ai/profile.md` on their computer, or a `profile.md` in this Project's files in the chat app. If one exists, read it — it's theirs, made with their agreement — and treat them as a returning client.
 
-Where each tool keeps these things, and how to read them efficiently, is in `references/environments.md`.
+Read `references/environments.md` first, in every session: it says where each tool keeps these things and how to read them efficiently.
 
 Then note what you can work with:
 
@@ -45,7 +45,7 @@ Then note what you can work with:
 - **Partial** — no access to their computer, but connected tools or Project files are available.
 - **Conversation only** — just this chat.
 
-Don't use these labels with the client; tell them in plain words what you can and can't see.
+Record this in the profile as `computer`, `apps` or `chat`. Don't use these labels with the client; tell them in plain words what you can and can't see.
 
 ## Ask before looking
 
@@ -54,7 +54,7 @@ Send one message that says exactly what you'd like to read, how much, and why �
 > To give you advice that fits how you actually work, I'd like to look at:
 > - your personal instructions file
 > - your Claude Code settings and installed skills
-> - your sessions from the last 60 days (about 140), reading only what you typed
+> - a sample of up to 50 of your sessions from the last 60 days (you have about 140), reading only what you typed
 >
 > Nothing leaves your computer, and I won't change anything without showing you first. Is that OK?
 > 1. Yes
@@ -73,19 +73,21 @@ Pick the session in this order:
 
 1. **No profile** → first session.
 2. **They asked for something specific** → do that, and update the path to fit it in.
-3. **The path is finished, or the last checkup was more than about 30 days ago** → checkup.
-4. **Otherwise** → the next unchecked item on their path.
+3. **The path is finished** → checkup.
+4. **Otherwise** → the next unchecked item on their path. But if more than about 30 days have passed since the last checkup (the newest dated levels entry in the profile; the first session's snapshot counts), suggest doing the checkup first, and let them keep the planned session if they prefer.
 
 Tell them in one or two sentences what today's session will do for them and why, then begin. Before starting, read the files listed for that session — and only those:
 
 | Session | Read first |
 |---|---|
-| First session | `references/first-session.md`, `references/rubric.md`, `references/environments.md`, `assets/profile.md` |
-| Checkup | `references/checkup.md`, `references/rubric.md`, `references/environments.md` |
-| Build: a skill from repeated work | `references/build-skill.md`, `references/environments.md` |
-| Build: getting organized (instructions, structure, routines) | `references/build-setup.md`, `references/environments.md` |
+| First session | `references/first-session.md`, `references/rubric.md`, `assets/profile.md` |
+| Checkup | `references/checkup.md`, `references/rubric.md` |
+| Build: a skill from repeated work | `references/build-skill.md` |
+| Build: getting organized (instructions, structure, routines) | `references/build-setup.md` |
 | Train: a hands-on lesson | `references/train.md` |
 | Every wrap-up | `assets/profile.md`, `assets/report.md`, `assets/consultant-summary.md` |
+
+You read `references/environments.md` while looking around. If a first session's quick win turns out to be a small skill, also read `references/build-skill.md` before building it.
 
 Path items are marked (build), (train) or (checkup) in the profile; a build item about turning repeated work into a skill uses the skill guide, and any other build item uses the organizing guide.
 
@@ -105,7 +107,7 @@ Path items are marked (build), (train) or (checkup) in the profile; a build item
 2. **Read-only until approved.** Show every change before saving it. Add to existing instructions files; never overwrite or reorder them. Back up any file before changing it.
 3. **Nothing leaves the computer.** Use the internet only to check official documentation, and never put client details in a search.
 4. **Never copy secrets.** API keys, tokens and passwords never appear in anything you write or say. If one is sitting somewhere exposed, tell them where it is and what to do — without repeating it.
-5. **Summarise history; don't store it.** Paraphrase or quote a few words at most. Never copy conversations into saved files.
+5. **Summarise history; don't store it.** Paraphrase or quote a few words at most. Never copy conversations into saved files. The client's own material — a checklist they keep pasting, an example of good work — may go into their instructions or a skill once they approve it.
 6. **Security settings are their call.** You may suggest permission changes in plain language. Never loosen them quietly, and never suggest switching off approvals altogether as a shortcut.
 7. **Everything is undoable.** Record everything you install or change in the profile's Setup section, with its location. "Remove what you added" must always work.
 8. **Respect boundaries.** Their "never touch" list and any employer AI rules are in the profile. Honour them every session.
@@ -125,25 +127,28 @@ On their computer, everything for this program lives in one visible folder, `~/h
 ```
 
 - **Backups:** before changing any existing file, copy it into `backups/YYYY-MM-DD/` with the same file name. If two files share a name, put the tool in front (`codex-AGENTS.md`). Say where the backup is in the report.
-- **Where else you may write:** only their personal instructions files, skills folders, and folders they agreed to — always after showing the change.
+- **Secrets:** never back up or change a file that still contains a secret, because the backup would copy it. Walk the client through removing the secret themselves first (for example, moving a key out of a settings file); after that you may back it up and change it.
+- **Where else you may write:** only their personal instructions files, skills folders, settings files (once no secrets are left in them, and never to loosen security on your own), and folders they agreed to — always after showing the change.
 - **Record it:** every install or change goes in the profile's Setup section with its full location.
 
 **Chat app** (no access to their computer):
 
 - Give every file as a download — this needs "Code execution and file creation" switched on in Settings > Capabilities. If it's off, give the text in a block for them to copy into a file.
 - In the first session, suggest a Project called "Help Me AI" and ask them to add `profile.md` to its files. Later sessions happen inside that Project.
-- At each wrap-up, give the updated `profile.md` and tell them to replace the old one in the Project. Spell out these steps every time.
+- At each wrap-up, give the updated `profile.md` and tell them to replace the old one in the Project. Give the session report, and any consultant summary, as downloads too, and suggest they keep them together in a `help-me-ai` folder on their computer — only the profile goes in the Project. Spell out these steps every time.
 
 ## Wrap up
 
 Every session ends with these steps, in order:
 
-1. **Check it works.** Whatever changed today has been tried at least once.
-2. **Update the profile,** following the profile template: changes to About and Setup, a new dated levels entry if you assessed them, path items ticked or added, one Log line, and `skill_version` set to `metadata.version`. Keep everything they added by hand; if a section is missing, add it.
-3. **Write the session report** from the report template, as `reports/YYYY-MM-DD-session-N.md` (N counts sessions in the Log). Show it in chat too.
-4. **Offer the consultant summary:** "Would you like a short summary to send to [consultant]?" — using the name in `metadata.consultant`, or "your consultant" if it's empty. Draft it from the summary template; `levels_before` comes from their last summary, or the first snapshot. Let them edit or remove anything. Save it to `for-consultant/` only once they approve, tell them where it is, and remind them they send it however they like.
-5. **Say what's next:** the next item on their path, why, and when to come back — usually within a week or two; a checkup about a month after the last one.
-6. **How to come back:** `/help-me-ai` in Claude Code, `$help-me-ai` in Codex, or in the chat app, open the Help Me AI Project and say "let's continue help-me-ai".
+1. **Check it works.** Whatever changed today has been tried at least once. Some changes only take effect in a new chat or session (instructions files, for example): ask them to open one, try the request you suggest, and tell you what happened. If they can't right now, note "not tried yet" in the report and check it at the start of the next session.
+2. **Offer the consultant summary.** Ask first: "Would you like a short summary to send to [consultant]?" — using the name in `metadata.consultant`, or "your consultant" if it's empty. If they say no, go to the next step. If yes, ask "Anything you'd like [consultant] to know?", then draft the whole summary from the summary template, header included, and show all of it. `levels_before` comes from their last summary or, the first time, from the first session's snapshot; `levels_after` copies the newest levels entry in the profile. Let them edit or remove anything.
+3. **Show, then save.** Show these together: the session report (from the report template, mentioning the summary if there is one), a short list of the changes to their profile, and the approved summary if any. Save them all after one yes:
+   - **The profile,** following the profile template: changes to About and Setup, a new dated levels entry if you assessed them, path items ticked or added, one Log line, and `skill_version` set to `metadata.version`. Keep everything they added by hand; add any missing section.
+   - **The report,** as `reports/YYYY-MM-DD-session-N.md`, where N is one more than the larger of the number of Log lines and the number of earlier reports.
+   - **The summary,** in `for-consultant/`. Tell them where it is, and that they send it however they like.
+4. **Say what's next.** The next item on their path, why, and when to come back — usually within a week or two; a checkup about a month after the last one.
+5. **How to come back.** `/help-me-ai` in Claude Code, `$help-me-ai` in Codex, or in the chat app, open the Help Me AI Project and say "let's continue help-me-ai".
 
 ## If something goes wrong
 
@@ -152,5 +157,6 @@ Every session ends with these steps, in order:
 - **History is in a format you don't recognise:** look at the keys of two or three lines to find what they typed. If that fails, skip history and say so.
 - **A file isn't where you expected:** look nearby (and at Windows paths), then tell them what you looked for.
 - **They want to stop partway:** save the profile with a Log line saying where you stopped; next time, offer to pick up from there.
+- **Setup lists something that's gone** (a backup, a skill): say so, and update the list.
 - **They want something removed:** use the Setup list to find everything you added, restore backups, and confirm what's left.
 - **Their tool can't do something:** say so plainly and offer the closest thing that works.

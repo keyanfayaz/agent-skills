@@ -34,15 +34,16 @@ Last verified: 2026-10-19
 
 This means claude.ai on the web, the Claude desktop app's chat, and the mobile apps. You can't see the client's computer here.
 
-- **Personal instructions** — the client's personal preferences in their Claude settings (applies to every chat), and each Project's instructions (applies inside that Project). You can't edit either: give the client finished text to paste and tell them exactly where it goes.
+- **Personal instructions** — personal preferences apply to every chat: click your initials (bottom left) > Settings, then the box "What preferences should Claude consider in responses?" (under General or Profile, depending on the version). Each Project also has its own instructions: open the Project and click "Set project instructions". You can't edit either: give the client finished text to paste and tell them exactly where it goes.
 - **Settings** — Settings > Capabilities holds "Code execution and file creation" (needed for skills and for files you hand back) and memory options. Team and Enterprise owners may control these.
 - **Skills folder** — no folder. Skills are uploaded from Customize > Skills: "+" > "+ Create skill" > "Upload a skill", then choose the ZIP. The ZIP must contain the skill's folder (named exactly like the skill), not loose files. Skills can be toggled on or off in the same list.
 - **Session history** — you can't read past chats as files. Some plans let Claude search past chats or keep memory; use that only if it's switched on and the client agrees. Otherwise, ask.
 - **Connected tools** — connectors are managed at Customize > Connectors (claude.ai/customize/connectors). Inside a chat you can see which connectors are available to you.
 - **Usage report** — none for usage patterns. Ask instead.
 - **Scheduled tasks** — not confirmed for regular chats. Don't promise one; if the client also uses Claude Code through the desktop app, a routine can live there, or give them a short weekly prompt to paste.
-- **Install notes** — every file you make for the client (profile, reports, a new skill's ZIP) must be a downloadable file plus clear steps for where to put it. For new skills, build the ZIP with the folder at the top level so it uploads cleanly.
-- **Sources** — https://support.claude.com/en/articles/12512180-using-skills-in-claude · https://claude.com/docs/skills/how-to · https://code.claude.com/docs/en/mcp
+- **Projects** — Projects in the sidebar (or claude.ai/projects) > "+ New Project". Files are added with "+" in the project knowledge panel on the right; they're available in every chat in that Project. Free accounts can have up to five Projects.
+- **Install notes** — every file you make for the client (profile, reports, a new skill's ZIP) must be a downloadable file plus clear steps for where to put it. Only the profile goes in the Help Me AI Project; reports and summaries are for the client to keep on their computer. For new skills, build the ZIP with the folder at the top level so it uploads cleanly.
+- **Sources** — https://support.claude.com/en/articles/12512180-using-skills-in-claude · https://claude.com/docs/skills/how-to · https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features · https://support.claude.com/en/articles/9519177 · https://code.claude.com/docs/en/mcp
 
 ## Windows
 

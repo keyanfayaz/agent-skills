@@ -88,7 +88,7 @@ The agent never needs git, Node or Python to install.
    - Path finished, or last checkup more than ~30 days ago → checkup.
    - Client asks for something specific → the agent fits it in and updates the path.
 4. **Run the session.**
-5. **Wrap up.** Update the profile, write the session report, offer the consultant summary, name the next session, and suggest when to come back.
+5. **Wrap up.** Check today's change works (or note it to try in a new session), offer the consultant summary, then show the report, profile changes and any approved summary together and save them after one yes. Name the next session and suggest when to come back.
 
 ### 5.3 Access levels
 | Level | Where | Evidence | Delivering changes |
@@ -98,7 +98,7 @@ The agent never needs git, Node or Python to install.
 | **Conversation-only** | Plain chat | Interview covering the rubric areas | Paste-ready text + downloadable files |
 
 ### 5.4 First session
-1. **Intake:** at most 3–5 questions, one at a time, multiple choice where possible, skipping anything the evidence already answered. Covers what they do, what they use AI for, what frustrates them, what they want from today, and boundaries (including employer AI rules).
+1. **Intake:** what to call them, then at most six questions, strictly one per message, multiple choice where possible, skipping anything the evidence already answered. Covers what they do, what they use AI for, what frustrates them, what they want from today, boundaries, and employer AI rules (its own question).
 2. **Quick win:** one concrete improvement chosen from the evidence. Default: teach the agent who the client is via a personal instructions file (`~/.claude/CLAUDE.md` for Claude Code, Codex's global AGENTS.md, or paste-ready text for chat-app profile/Project instructions). If that already exists and is good, pick the next most valuable gap. If the client uses both Claude Code and Codex, write the same content to both files and record both in the profile's Setup section.
 3. **Rubric snapshot:** levels across the six areas (section 7).
 4. **Propose the path:** 3–5 sessions with one-line reasons. The client approves or reorders.
@@ -172,7 +172,7 @@ Short, because it's read at the start of every session. YAML header for machine-
 schema: 1
 name: <first name or alias the client chooses>
 tools: [claude-code, codex, claude-chat]
-access: full | partial | conversation
+access: computer | apps | chat
 levels:
   - date: 2026-10-20
     context: starting

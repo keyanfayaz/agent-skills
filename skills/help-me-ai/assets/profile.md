@@ -2,7 +2,7 @@
 schema: 1
 name: ""              # first name or alias the client chooses
 tools: []             # any of: claude-code, codex, claude-chat
-access: ""            # full | partial | conversation
+access: ""            # what you could see: computer | apps | chat
 skill_version: ""     # help-me-ai version that last updated this file
 levels:               # add one entry each time levels are assessed; never delete old ones
   - date: ""          # YYYY-MM-DD
