@@ -1,14 +1,17 @@
 name: Release
 
+# Pushing a version tag (v0.1.0) builds help-me-ai.zip and creates the release
+# with the zip already attached, so the "latest" download link never points at
+# a release without it.
 on:
-  release:
-    types: [published]
+  push:
+    tags: ["v*"]
 
 permissions:
   contents: write
 
 jobs:
-  zip:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +27,7 @@ jobs:
       - name: Build help-me-ai.zip
         run: scripts/build-zip.sh dist
 
-      - name: Attach it to the release
-        run: gh release upload "$GITHUB_REF_NAME" dist/help-me-ai.zip --clobber
+      - name: Create the release with the zip attached
+        run: gh release create "$GITHUB_REF_NAME" dist/help-me-ai.zip --title "help-me-ai ${GITHUB_REF_NAME#v}" --generate-notes
         env:
           GH_TOKEN: ${{ github.token }}

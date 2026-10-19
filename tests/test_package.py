@@ -38,8 +38,11 @@ class Package(unittest.TestCase):
 
     def test_release_workflow(self):
         text = (REPO / ".github" / "workflows" / "release.yml").read_text()
-        for needle in ["types: [published]", "scripts/build-zip.sh", "help-me-ai.zip", "contents: write"]:
+        # The release is created together with its zip, so the "latest" link never 404s.
+        for needle in ["tags:", '"v*"', "scripts/build-zip.sh", "gh release create", "help-me-ai.zip",
+                       "contents: write"]:
             self.assertIn(needle, text)
+        self.assertNotIn("types: [published]", text)
 
 
 if __name__ == "__main__":

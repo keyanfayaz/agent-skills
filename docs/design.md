@@ -1,7 +1,7 @@
 # help-me-ai — Design Spec
 
 **Date:** 2026-10-19
-**Status:** Draft for review
+**Status:** Approved 2026-10-19; first version built and tested
 **Name:** `help-me-ai` · **Repo:** `keyanfayaz/agent-skills`
 
 ## 1. Purpose
@@ -126,6 +126,7 @@ One question at a time; multiple choice where possible; plain language, no jargo
 - **Builds only what will be used this week:**
   - the personal instructions file
   - a simple structure suited to the tool (folders for Code/Codex, Projects for the chat app)
+  - connections to the apps they copy from, using built-in connectors only (the client signs in; nothing installed)
   - 2–3 routines, as skills or as scheduled tasks where the tool supports them
   - a "first week" list of 3 things to try
 - Everything else goes into the path or the profile as "later".
@@ -211,7 +212,7 @@ These live in `SKILL.md` and apply to every session.
 
 1. **Ask first, and be specific.** List exactly what will be read and how much. The client can exclude folders or projects. Nothing is read before a yes.
 2. **Read-only until approved.** Show every change before saving it. Existing instructions files are added to, never overwritten. Back up to `~/help-me-ai/backups/` first.
-3. **Nothing leaves the computer.** Web access is only for checking official docs, and client details never go into queries.
+3. **Nothing goes anywhere except to the AI they already use.** What the agent reads is processed by the client's own AI tool, as in any chat, and the agent says so plainly; nothing goes to the consultant or anyone else. Web access is only for checking official docs, and client details never go into queries.
 4. **Never copy secrets.** API keys, tokens and passwords never appear in any output. An exposed secret is reported as a safety finding without repeating it.
 5. **Summarise history; don't store it.** Quote briefly or paraphrase. Never copy transcripts into saved files.
 6. **Security settings are the client's call.** Propose permission changes in plain language. Never quietly loosen them, and never recommend blanket "skip all approvals" modes as a shortcut.
@@ -241,10 +242,15 @@ agent-skills/
         profile.md          template
         report.md           template
         consultant-summary.md template
+  scripts/
+    build-zip.sh            builds help-me-ai.zip with the skill folder at the top level
   tests/
-    scenarios.md            test personas + pass/fail checklist
+    test_*.py, skillcheck.py   standard-library checks of the format and repo rules
+    make_fixtures.py        synthetic client home folders for dry runs
+    scenario_check.py       checks what a dry run left behind
+    scenarios.md            test personas, pass/fail checklist, release checklist
   .github/workflows/
-    release.yml             builds help-me-ai.zip and attaches it to each release
+    release.yml             on a version tag: builds help-me-ai.zip and creates the release with it
 ```
 
 The repo is a growing collection. Future standalone skills (other offerings, or client-built skills worth reusing generically) are added as siblings under `skills/`.
@@ -254,7 +260,7 @@ The repo is a growing collection. Future standalone skills (other offerings, or 
 - AGENTS.md at the repo root. Claude Code reads AGENTS.md when no CLAUDE.md exists, so no CLAUDE.md is needed.
 - **No dependencies.** On the client's machine, neither the skill nor anything it builds may require git, Node, Python, or any other install. It works with the agent's own file tools. Where a shell helps, it uses only commands that ship with macOS and Windows (`curl`, `tar`, `unzip`, PowerShell). Backups are plain file copies, and skills built for the client are plain files. Git is only for the consultant, to maintain the repo.
 
-**Release artefact:** `help-me-ai.zip`, with the `help-me-ai/` folder at its top level. It's used for every install route. A GitHub Action (`.github/workflows/release.yml`) builds it and attaches it whenever the consultant publishes a release, so the "latest" download link always points to the current version. The skill's version is stored in `SKILL.md` `metadata` and recorded in each session report.
+**Release artefact:** `help-me-ai.zip`, with the `help-me-ai/` folder at its top level. It's used for every install route. A GitHub Action (`.github/workflows/release.yml`) runs when the consultant pushes a version tag: it checks the tag matches the skill's version, builds the zip and creates the release with the zip already attached, so the "latest" download link never points at a release without it. The skill's version is stored in `SKILL.md` `metadata` and recorded in each session report.
 
 ## 11. Testing
 

@@ -48,7 +48,7 @@ SESSION_GUIDES = {
     "checkup.md": ["What to read", "What to look for", "Levels", "Top 3 moves", "Update the path"],
     "build-skill.md": ["Find candidates", "Rank", "Triage", "Capture the steps",
                        "Write the SKILL.md", "Install", "Test run"],
-    "build-setup.md": ["Conversation", "Instructions file", "Structure", "Routines", "First week"],
+    "build-setup.md": ["Conversation", "Instructions file", "Structure", "Connect an app", "Routines", "First week"],
     "train.md": ["Pick the gap", "Check current docs", "Run the lesson", "Wrap up"],
 }
 

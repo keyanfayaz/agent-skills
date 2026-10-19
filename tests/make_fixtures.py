@@ -72,18 +72,25 @@ def _iso(when: datetime) -> str:
 
 def _write_jsonl(path: Path, lines: list[dict], when: datetime) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("".join(json.dumps(line) + "\n" for line in lines))
+    # Real session files are compact JSON (no spaces); match them so search patterns are tested honestly.
+    path.write_text("".join(json.dumps(line, separators=(",", ":")) + "\n" for line in lines))
     stamp = when.timestamp()
     os.utime(path, (stamp, stamp))
 
 
-def _claude_session(folder: Path, when: datetime, turns: list[str], padding: int = 0) -> None:
+def _claude_session(folder: Path, when: datetime, turns: list[str], padding: int = 0,
+                    compact_summary: bool = False, subagent_prompt: str = "") -> None:
     session = str(uuid.uuid4())
     lines = []
+    if compact_summary:  # written by Claude Code when a long session is compacted, not typed by the client
+        lines.append({"type": "user", "isSidechain": False, "isCompactSummary": True, "sessionId": session,
+                      "timestamp": _iso(when), "message": {"role": "user", "content":
+                      "This session is being continued from a previous conversation. Summary: drafted the "
+                      "weekly client update for Brightwater using the 12-point checklist."}})
     for i, typed in enumerate(turns):
         at = _iso(when + timedelta(minutes=5 * i))
-        lines.append({"type": "user", "sessionId": session, "timestamp": at, "cwd": "/Users/sam/work",
-                      "message": {"role": "user", "content": typed}})
+        lines.append({"type": "user", "isSidechain": False, "sessionId": session, "timestamp": at,
+                      "cwd": "/Users/sam/work", "message": {"role": "user", "content": typed}})
         lines.append({"type": "assistant", "sessionId": session, "timestamp": at,
                       "message": {"role": "assistant", "content": [{"type": "text", "text": "Here's a draft."}]}})
     chunk = "x" * 10_000
@@ -92,6 +99,10 @@ def _claude_session(folder: Path, when: datetime, turns: list[str], padding: int
                       "message": {"role": "user", "content": [
                           {"type": "tool_result", "tool_use_id": "t1", "content": chunk}]}})
     _write_jsonl(folder / f"{session}.jsonl", lines, when)
+    if subagent_prompt:  # an agent-to-agent conversation stored beside the session; not the client's words
+        _write_jsonl(folder / session / "subagents" / "agent-1.jsonl", [
+            {"type": "user", "isSidechain": True, "sessionId": session, "timestamp": _iso(when),
+             "message": {"role": "user", "content": subagent_prompt}}], when)
 
 
 def _codex_session(sessions: Path, when: datetime, turns: list[str]) -> None:
@@ -122,7 +133,10 @@ def _sam(home: Path) -> None:
     work = claude / "projects" / "-Users-sam-work"
     weekly = f"Can you draft the weekly client update for Brightwater? {WEEKLY_CHECKLIST}"
     for days in (3, 10, 17, 24, 31):
-        _claude_session(work, NOW - timedelta(days=days), [weekly, "Make it shorter."])
+        _claude_session(work, NOW - timedelta(days=days), [weekly, "Make it shorter."],
+                        compact_summary=(days == 17),
+                        subagent_prompt="Research three competitor agencies' retainer pricing and return a "
+                                        "table." if days == 10 else "")
     _claude_session(work, NOW - timedelta(days=6), [
         "Write a LinkedIn post about our new brand workshop.",
         "no, I meant shorter and less salesy — I've told you before we write in a plain, friendly voice"])

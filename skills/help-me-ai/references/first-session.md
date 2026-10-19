@@ -30,7 +30,7 @@ Pick the single most useful thing you can finish in about 10 minutes. Start from
 - Both tools in use: add the same block to both.
 - Chat app: give it as finished text to paste into their personal preferences in Claude's settings, and tell them exactly where that is. First ask whether that box already has text; if it does, have them add yours at the end instead of replacing what's there.
 
-If the file already exists, back it up and add your block at the end. Never rewrite, reorder or remove what's there. Keep task procedures (a checklist or the steps for one particular job) out of personal instructions — those become a skill.
+If the file already exists, back it up and add your block at the end. Never rewrite, reorder or remove what's there. If they didn't agree to you reading their instructions file, ask before opening it to add your block; if they'd rather you didn't, give them the text and tell them exactly where to paste it. Keep task procedures (a checklist or the steps for one particular job) out of personal instructions — those become a skill.
 
 **If that's already strong,** take the biggest gap from the snapshot that fits in 10 minutes instead — for example, connecting the app they paste from most, a tiny skill for their most repeated request, or moving an exposed key out of their settings (tell them where it is; never repeat it).
 

@@ -56,7 +56,7 @@ description: Drafts the Friday client update from this week's notes and tasks, i
 Rules:
 
 - **Name:** lowercase letters, digits and single hyphens, at most 64 characters, the same as the folder name. Use their words so it's easy to remember.
-- **Description:** at most 1024 characters. Say what it does, then "Use when …" followed by the phrases the client actually uses to ask for it. This is what makes it start on its own, so use their words, not yours.
+- **Description:** at most 200 characters, so it works in every tool (the Claude app's limit). Say what it does, then "Use when …" followed by the phrases the client actually uses to ask for it. This is what makes it start on its own, so use their words, not yours.
 - **Body:** under about 150 lines. The steps, the inputs and where they come from, the output format, a short quality checklist, and their good example (with names and private details replaced).
 - **Plain files only.** No scripts, nothing to install. If there's long reference material (a style guide, a price list), put it in a second file inside the skill folder and say in `SKILL.md` when to read it.
 - Show the complete draft and adjust it until they're happy before saving.

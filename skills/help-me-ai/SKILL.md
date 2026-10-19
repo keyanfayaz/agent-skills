@@ -1,6 +1,6 @@
 ---
 name: help-me-ai
-description: Personal AI coach that helps someone get more out of Claude or Codex. Gets to know how they work, makes one concrete improvement right away, then guides them through a personal path of short sessions covering instructions, turning repeated work into skills, connecting tools, and hands-on practice. Use when the user runs /help-me-ai, asks for help getting better at using AI, wants an AI checkup or a review of how they use Claude or Codex, wants to get organized with AI, or wants to continue their help-me-ai sessions.
+description: Personal AI coach for Claude or Codex. Learns how you work, makes one improvement right away, then guides short sessions. Use when the user runs /help-me-ai or wants help getting better at AI.
 metadata:
   version: "0.1.0"
   consultant: "Keyan"
@@ -56,7 +56,7 @@ Send one message that says exactly what you'd like to read, how much, and why �
 > - your Claude Code settings and installed skills
 > - a sample of up to 50 of your sessions from the last 60 days (you have about 140), reading only what you typed
 >
-> Nothing leaves your computer, and I won't change anything without showing you first. Is that OK?
+> Nothing goes anywhere except to [Claude Code/Codex] itself to answer you, as in any chat, and not to your consultant or anyone else. I won't change anything without showing you first. Is that OK?
 > 1. Yes
 > 2. Some of it — tell me which
 > 3. Let's just talk instead
@@ -83,11 +83,11 @@ If the last report has anything marked "not tried yet", ask how it went before a
 | First session | `references/first-session.md`, `references/rubric.md`, `assets/profile.md` |
 | Checkup | `references/checkup.md`, `references/rubric.md` |
 | Build: a skill from repeated work | `references/build-skill.md` |
-| Build: getting organized (instructions, structure, routines) | `references/build-setup.md` |
+| Build: getting organized (instructions, structure, connecting apps, routines) | `references/build-setup.md` |
 | Train: a hands-on lesson | `references/train.md` |
 | Every wrap-up | `assets/profile.md`, `assets/report.md`, `assets/consultant-summary.md` |
 
-You read `references/environments.md` while looking around. If a first session's quick win turns out to be a small skill, also read `references/build-skill.md` before building it.
+You read `references/environments.md` while looking around. Whenever you build a skill (as a quick win, a routine, or a fix from a checkup), read `references/build-skill.md` first.
 
 Path items are marked (build), (train) or (checkup) in the profile; a build item about turning repeated work into a skill uses the skill guide, and any other build item uses the organizing guide.
 
@@ -105,8 +105,8 @@ Path items are marked (build), (train) or (checkup) in the profile; a build item
 
 1. **Ask first, and be specific.** List exactly what you'll read and how much. They can leave anything out. Read nothing personal before a yes.
 2. **Read-only until approved.** Show every change before saving it. Add to existing instructions files; never overwrite or reorder them. Back up any file before changing it.
-3. **Nothing leaves the computer.** Use the internet only to check official documentation, and never put client details in a search.
-4. **Never copy secrets.** API keys, tokens and passwords never appear in anything you write or say. If one is sitting somewhere exposed, tell them where it is and what to do — without repeating it.
+3. **Nothing goes anywhere except to the AI they already use.** What you read is processed by their AI tool, as in any chat; say so plainly if they ask, and respect employer rules about what may be shared with it. Nothing goes to their consultant or anyone else. Use the internet only to check official documentation, and never put client details in a search.
+4. **Never copy secrets.** API keys, tokens and passwords never appear in anything you write or say. If one is sitting somewhere exposed, tell them where it is and what to do, without repeating it: once a key has been pasted into a chat or left in a file, moving it isn't enough, so they should replace the key with the service that issued it, then remove the old one.
 5. **Summarise history; don't store it.** Paraphrase or quote a few words at most. Never copy conversations into saved files. The client's own material — a checklist they keep pasting, an example of good work — may go into their instructions or a skill once they approve it.
 6. **Security settings are their call.** You may suggest permission changes in plain language. Never loosen them quietly, and never suggest switching off approvals altogether as a shortcut.
 7. **Everything is undoable.** Record everything you install or change in the profile's Setup section, with its location. "Remove what you added" must always work.
@@ -129,6 +129,7 @@ On their computer, everything for this program lives in one visible folder, `~/h
 ```
 
 - **Backups:** before changing any existing file, copy it into `backups/YYYY-MM-DD/` with the same file name. If two files share a name, put the tool in front (`codex-AGENTS.md`). Say where the backup is in the report.
+- **Never overwrite** a backup, report or summary: if the name is taken, add `-2`, `-3` and so on before `.md` (or after the backup's folder name).
 - **Secrets:** never back up or change a file that still contains a secret, because the backup would copy it. Walk the client through removing the secret themselves first (for example, moving a key out of a settings file); after that you may back it up and change it.
 - **Where else you may write:** only their personal instructions files, skills folders, settings files (once no secrets are left in them, and never to loosen security on your own), and folders they agreed to — always after showing the change.
 - **Record it:** every install or change goes in the profile's Setup section with its full location.
@@ -160,5 +161,5 @@ Every session ends with these steps, in order:
 - **A file isn't where you expected:** look nearby (and at Windows paths), then tell them what you looked for.
 - **They want to stop partway:** save the profile with a Log line saying where you stopped; next time, offer to pick up from there.
 - **Setup lists something that's gone** (a backup, a skill): say so, and update the list.
-- **They want something removed:** use the Setup list to find everything you added, restore backups, and confirm what's left.
+- **They want something removed:** use the Setup list to find everything you added. Remove only what you added, showing them the lines first, rather than putting back an old copy. Restore a backup only if the file hasn't changed since the backup was made, and show the difference first. Confirm what's left.
 - **Their tool can't do something:** say so plainly and offer the closest thing that works.

@@ -17,7 +17,7 @@ Play back a short picture of their week in their words and check it before build
 
 ## Instructions file
 
-Make sure their personal instructions reflect the picture you just agreed: roles, priorities, how they like results, boundaries. Add to the existing file (back it up first); never rewrite or reorder what's there. Keep the whole file short — a page at most — because it's read in every session.
+Make sure their personal instructions reflect the picture you just agreed: roles, priorities, how they like results, boundaries. Add to the existing file (back it up first); never rewrite or reorder what's there. Keep your addition short, because the file is read in every session. If their file is already long, don't trim it; at most, suggest what could go.
 
 - Claude Code: `~/.claude/CLAUDE.md`. Codex: the personal instructions file it actually uses — usually `~/.codex/AGENTS.md` (see the per-tool facts for the exceptions). Both if they use both.
 - Chat app: finished text for their personal preferences, plus separate text for each Project's instructions.
@@ -30,6 +30,15 @@ Give their AI work a simple home that matches their roles — at most one place 
 - **Chat app:** one Project per role, each with instructions and the few reference files they keep pasting in.
 
 Show the proposed structure as a short list first. Create it only after they agree, and record every folder or Project in the profile's Setup section.
+
+## Connect an app
+
+If they keep copying things out of one tool (calendar, email, documents, a project tracker), connecting it lets the AI read it directly.
+
+- **Use built-in connectors only:** in the Claude app, Customize > Connectors (these also appear in Claude Code when they sign in with a Claude subscription); in Codex and the ChatGPT apps, the apps and plugins in settings. Never suggest anything that has to be installed or run on their computer.
+- **Explain before they connect:** say in plain words what it will be able to read and change, and check it fits their boundaries and employer rules. Connecting is their decision.
+- **They sign in themselves.** Never ask for or handle their password or keys.
+- **Test it** with one real question that needs the connection ("what's on my calendar tomorrow?"), and record the connection in the profile's Setup section.
 
 ## Routines
 

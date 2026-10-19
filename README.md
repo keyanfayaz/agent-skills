@@ -6,7 +6,7 @@ A personal AI coach that lives inside the AI tool you already use: Claude Code, 
 
 Type `/help-me-ai` and your own AI gets to know how you work. In the first session it makes one real improvement straight away, then suggests a short path of sessions to help you get much more out of AI. That can mean teaching it who you are, turning work you repeat into one-word commands, connecting the apps you copy and paste from, and hands-on practice on your own tasks.
 
-It asks before it looks at anything, shows you every change before making it, and keeps everything on your computer.
+It asks before it looks at anything, shows you every change before making it, and keeps your progress in a folder on your computer.
 
 ## Install
 
@@ -19,12 +19,12 @@ Copy everything in the box below, paste it into Claude Code or Codex, and press 
 ```text
 Please install the "help-me-ai" skill for me, then start it.
 
-1. Download https://github.com/keyanfayaz/agent-skills/releases/latest/download/help-me-ai.zip using tools already on this computer (curl, or PowerShell on Windows). Don't install anything new — git isn't needed.
+1. Download https://github.com/keyanfayaz/agent-skills/releases/latest/download/help-me-ai.zip using tools already on this computer (curl on a Mac; curl.exe or PowerShell on Windows). Don't install anything new — git isn't needed.
 2. Unzip it and put the help-me-ai folder in my personal skills folder:
    - Claude Code: ~/.claude/skills/
    - Codex: ~/.agents/skills/
    If a help-me-ai folder is already there, replace only that folder. Never touch ~/help-me-ai/ — that's where my progress is saved.
-3. If you can't download it, give me the link to open in my browser, then install it from my Downloads folder.
+3. If you can't download it, give me the link to open in my browser, then install it from my Downloads folder (if my browser already unzipped it, use the help-me-ai folder there).
 4. Before running any command that needs my approval, tell me in one plain sentence what it does.
 5. When it's installed, start help-me-ai. If it doesn't show up yet, read the SKILL.md file inside the folder you just installed and follow it.
 ```
@@ -63,7 +63,7 @@ Come back the same way for your next session. It remembers where you left off.
 - It **asks first** before reading anything, says exactly what and how much, and you can say no to any of it.
 - It **shows you every change** before making it, and backs up any file it changes.
 - It **never copies passwords or keys**, and keeps your progress on your computer in a folder called `help-me-ai` in your home folder.
-- It **never sends anything to anyone.** At the end of a session it can write a short summary for your consultant, which you review and send yourself if you want to.
+- It **shares nothing with anyone** beyond the AI you're already using. At the end of a session it can write a short summary for your consultant, which you review and send yourself if you want to.
 
 ## Update or remove
 

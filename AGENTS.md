@@ -15,7 +15,7 @@ skills/help-me-ai/
   references/*.md          one focused guide per session type, plus rubric and per-tool facts
   assets/*.md              templates for the client's profile, reports and consultant summary
 scripts/build-zip.sh       builds help-me-ai.zip for releases
-.github/workflows/         release workflow that attaches the zip
+.github/workflows/         release workflow: a version tag creates the release with the zip
 tests/                     standard-library checks, scenario fixtures and checklists
 ```
 
@@ -36,6 +36,6 @@ python3 -m unittest discover tests
 ## Releasing
 
 1. Bump `metadata.version` in `skills/help-me-ai/SKILL.md` and commit.
-2. `gh release create vX.Y.Z --title "help-me-ai X.Y.Z" --notes "<what changed>"` — the tag must equal `v` + the version.
-3. The release workflow builds `help-me-ai.zip` and attaches it. The install link (`…/releases/latest/download/help-me-ai.zip`) then serves the new version.
+2. `git tag vX.Y.Z && git push origin main vX.Y.Z` — the tag must equal `v` + the version.
+3. The release workflow builds `help-me-ai.zip` and creates the release with it attached. The install link (`…/releases/latest/download/help-me-ai.zip`) then serves the new version. Edit the release notes on GitHub if you like.
 4. Run the release checklist in `tests/scenarios.md`.
