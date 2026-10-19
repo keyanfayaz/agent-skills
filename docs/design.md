@@ -1,12 +1,12 @@
-# ai-helper — Design Spec
+# help-me-ai — Design Spec
 
 **Date:** 2026-10-19
 **Status:** Draft for review
-**Working name:** `ai-helper` (final name confirmed before implementation)
+**Name:** `help-me-ai` · **Repo:** `keyanfayaz/agent-skills`
 
 ## 1. Purpose
 
-A consultant sends a client one link. The client pastes one prompt (or uploads one zip), types `/ai-helper`, and their own AI agent becomes a personal coach that gets to know how they work, makes a concrete improvement in the first session, and then guides them through a personal path of short sessions that set everything up and teach them to use AI better.
+A consultant sends a client one link. The client pastes one prompt (or uploads one zip), types `/help-me-ai`, and their own AI agent becomes a personal coach that gets to know how they work, makes a concrete improvement in the first session, and then guides them through a personal path of short sessions that set everything up and teach them to use AI better.
 
 The insight behind it: the client's own agent is the best-placed assessor. In Claude Code and Codex it can read the client's real setup and session history and point to evidence ("you've pasted this checklist 9 times") instead of interrogating them.
 
@@ -19,7 +19,7 @@ The insight behind it: the client's own agent is the best-placed assessor. In Cl
 - Recommendations come from the agent's own judgment, not a house methodology.
 - Results reach the consultant as a summary the client reviews and sends.
 - Use open standards: Agent Skills (agentskills.io) and AGENTS.md.
-- Not called "ai-leap"; working name `ai-helper`.
+- Named `help-me-ai`: easy to remember, and it appears when a client starts typing `/help`.
 
 **Assumptions (confirmed or defaulted):**
 - Clients may be non-technical: plain language, copy-paste install, no terminal knowledge required.
@@ -34,11 +34,11 @@ The insight behind it: the client's own agent is the best-placed assessor. In Cl
 4. The client never has to choose a "mode" or learn internal vocabulary.
 5. Nothing is read without consent and nothing is written without approval.
 6. The consultant receives a client-approved summary in a fixed format.
-7. Re-running `/ai-helper` later picks up where the client left off and shows progress.
+7. Re-running `/help-me-ai` later picks up where the client left off and shows progress.
 
 ## 4. Concept
 
-One skill. The client runs `/ai-helper` (Claude Code), `$ai-helper` (Codex), or asks for it in the chat app. The agent:
+One skill. The client runs `/help-me-ai` (Claude Code), `$help-me-ai` (Codex), or asks for it in the chat app. The agent:
 
 - **First run:** gets to know the client → delivers a quick win → proposes a personal **path** of 3–5 short sessions ordered by value.
 - **Every later run:** runs the next session on the path and revises the path as it learns.
@@ -63,21 +63,21 @@ Example path:
 
 ### 5.1 Install (one step, no git required)
 
-Every install uses one file: `ai-helper.zip`, attached to each GitHub release. It always downloads from the same address: `https://github.com/<owner>/ai-skills/releases/latest/download/ai-helper.zip`.
+Every install uses one file: `help-me-ai.zip`, attached to each GitHub release. It always downloads from the same address: `https://github.com/keyanfayaz/agent-skills/releases/latest/download/help-me-ai.zip`.
 
 **Claude Code / Codex: paste the prompt from the README.** The prompt tells the agent to work through these steps in order, stopping at the first that works:
-1. **Download and unzip with what the computer already has.** macOS and Windows 10+ both include `curl` and `tar`. macOS also has `unzip`, and Windows has PowerShell's `Expand-Archive`. Then copy `ai-helper/` into the personal skills folder: `~/.claude/skills/` for Claude Code, `~/.agents/skills/` for Codex. On Windows, the same folders sit under the user's home folder.
+1. **Download and unzip with what the computer already has.** macOS and Windows 10+ both include `curl` and `tar`. macOS also has `unzip`, and Windows has PowerShell's `Expand-Archive`. Then copy `help-me-ai/` into the personal skills folder: `~/.claude/skills/` for Claude Code, `~/.agents/skills/` for Codex. On Windows, the same folders sit under the user's home folder.
 2. **If the agent can't reach the internet** (Codex's sandbox, a corporate network, a declined approval): the agent gives the client the download link to open in their browser. Then it installs from the client's Downloads folder.
 3. **If a command needs approval** (Codex sandbox, Claude Code permission prompt): the agent explains in one plain sentence what the command does, so the client can approve with confidence.
 
 The agent never needs git, Node or Python to install.
 
 **Other routes:**
-- **Technical clients with Node:** `npx skills add <owner>/ai-skills --skill ai-helper -g`.
+- **Technical clients with Node:** `npx skills add keyanfayaz/agent-skills --skill help-me-ai -g`.
 - **Codex:** the built-in `$skill-installer` may also work from the repo URL (to verify; see section 13).
-- **Chat app:** download `ai-helper.zip` from the same link and upload it in Settings.
+- **Chat app:** download `help-me-ai.zip` from the same link and upload it in Settings.
 
-**Updating:** paste the same prompt again. Only the skill folder is replaced. `~/ai-helper/` (profile, reports) is never touched.
+**Updating:** paste the same prompt again. Only the skill folder is replaced. `~/help-me-ai/` (profile, reports) is never touched.
 
 ### 5.2 Every run
 1. **Look around (silently).** Identify the tool; determine the access level (5.3); check for an existing profile.
@@ -154,14 +154,14 @@ Levels: **Starting / Building / Strong**. Each level is defined per area in `ref
 ## 8. Data and files
 
 ### 8.1 Location
-`~/ai-helper/` in the client's home folder. It is visible (not hidden) so non-technical clients can find it, and shared by Claude Code and Codex on the same machine.
+`~/help-me-ai/` in the client's home folder. It is visible (not hidden) so non-technical clients can find it, and shared by Claude Code and Codex on the same machine.
 
 ```
-~/ai-helper/
+~/help-me-ai/
   profile.md
   reports/YYYY-MM-DD-session-N.md
   for-consultant/YYYY-MM-DD-summary.md
-  backups/            ← copies of any file before ai-helper changed it
+  backups/            ← copies of any file before help-me-ai changed it
 ```
 
 ### 8.2 `profile.md`
@@ -186,7 +186,7 @@ levels:
 
 Sections:
 - **About:** role, work, goals, boundaries, employer AI rules
-- **Setup:** tools in use, plus everything ai-helper installed and where
+- **Setup:** tools in use, plus everything help-me-ai installed and where
 - **Path:** numbered sessions with status and a one-line reason
 - **Log:** one line per session
 
@@ -203,14 +203,14 @@ Fixed template with a YAML header containing the rubric levels (for later team r
 - The consultant's name and contact are set once in the skill's `metadata` frontmatter, so the summary can say "send this to [consultant]".
 
 ### 8.5 Chat app (no file system)
-The first session suggests creating a Claude Project named "AI Helper". The agent produces `profile.md` as a downloadable file, and the client adds it to the Project's files. Later sessions run inside that Project. At wrap-up the client replaces the file with the updated version. The steps are spelled out every time.
+The first session suggests creating a Claude Project named "Help Me AI". The agent produces `profile.md` as a downloadable file, and the client adds it to the Project's files. Later sessions run inside that Project. At wrap-up the client replaces the file with the updated version. The steps are spelled out every time.
 
 ## 9. Privacy and safety rules
 
 These live in `SKILL.md` and apply to every session.
 
 1. **Ask first, and be specific.** List exactly what will be read and how much. The client can exclude folders or projects. Nothing is read before a yes.
-2. **Read-only until approved.** Show every change before saving it. Existing instructions files are added to, never overwritten. Back up to `~/ai-helper/backups/` first.
+2. **Read-only until approved.** Show every change before saving it. Existing instructions files are added to, never overwritten. Back up to `~/help-me-ai/backups/` first.
 3. **Nothing leaves the computer.** Web access is only for checking official docs, and client details never go into queries.
 4. **Never copy secrets.** API keys, tokens and passwords never appear in any output. An exposed secret is reported as a safety finding without repeating it.
 5. **Summarise history; don't store it.** Quote briefly or paraphrase. Never copy transcripts into saved files.
@@ -221,11 +221,11 @@ These live in `SKILL.md` and apply to every session.
 ## 10. Repository
 
 ```
-ai-skills/
+agent-skills/
   README.md                 client-facing: install options + copy-paste prompts
   AGENTS.md                 for agents maintaining this repo: spec rules, conventions, testing
   skills/
-    ai-helper/
+    help-me-ai/
       SKILL.md              front door: environment check, consent, profile, session picker,
                             privacy rules, wrap-up (< 500 lines per Agent Skills spec)
       references/
@@ -244,7 +244,7 @@ ai-skills/
   tests/
     scenarios.md            test personas + pass/fail checklist
   .github/workflows/
-    release.yml             builds ai-helper.zip and attaches it to each release
+    release.yml             builds help-me-ai.zip and attaches it to each release
 ```
 
 The repo is a growing collection. Future standalone skills (other offerings, or client-built skills worth reusing generically) are added as siblings under `skills/`.
@@ -254,11 +254,11 @@ The repo is a growing collection. Future standalone skills (other offerings, or 
 - AGENTS.md at the repo root. Claude Code reads AGENTS.md when no CLAUDE.md exists, so no CLAUDE.md is needed.
 - **No dependencies.** On the client's machine, neither the skill nor anything it builds may require git, Node, Python, or any other install. It works with the agent's own file tools. Where a shell helps, it uses only commands that ship with macOS and Windows (`curl`, `tar`, `unzip`, PowerShell). Backups are plain file copies, and skills built for the client are plain files. Git is only for the consultant, to maintain the repo.
 
-**Release artefact:** `ai-helper.zip`, with the `ai-helper/` folder at its top level. It's used for every install route. A GitHub Action (`.github/workflows/release.yml`) builds it and attaches it whenever the consultant publishes a release, so the "latest" download link always points to the current version. The skill's version is stored in `SKILL.md` `metadata` and recorded in each session report.
+**Release artefact:** `help-me-ai.zip`, with the `help-me-ai/` folder at its top level. It's used for every install route. A GitHub Action (`.github/workflows/release.yml`) builds it and attaches it whenever the consultant publishes a release, so the "latest" download link always points to the current version. The skill's version is stored in `SKILL.md` `metadata` and recorded in each session report.
 
 ## 11. Testing
 
-1. **Structure:** `skills-ref validate skills/ai-helper` passes.
+1. **Structure:** `python3 -m unittest discover tests` passes. This is a standard-library-only checker for the Agent Skills spec rules plus this repo's own rules. The reference `skills-ref` tool is demo-only and not packaged, so it isn't used.
 2. **Scenario dry runs** against a pass/fail checklist in `tests/scenarios.md`. Personas:
    - A. Newcomer in the Claude chat app (conversation-only)
    - B. Heavy Claude Code user with months of history (full)
@@ -282,7 +282,7 @@ The repo is a growing collection. Future standalone skills (other offerings, or 
 ## 12. Out of scope for v1
 
 - Team rollup tooling (the structure supports it later)
-- Claude Code plugin marketplace packaging (it would namespace the command to `/ai-helper:ai-helper`)
+- Claude Code plugin marketplace packaging (it would namespace the command to `/help-me-ai:help-me-ai`)
 - Bundled scripts (e.g. a history extractor). Revisit if dry runs show history reading is too slow or unreliable.
 - HTML reports
 - Any automatic sending of data to the consultant
@@ -295,15 +295,12 @@ These are checked against current official docs while building, and recorded in 
 - Claude Code session history format (`~/.claude/projects/**/*.jsonl`), the user-level skills folder (`~/.claude/skills/`), and whether new skills are picked up without a restart.
 - Claude chat app: the exact settings path for uploading a skill zip; whether file downloads and Projects behave as section 8.5 assumes.
 - The current `npx skills` flags for a global, single-skill install.
-- That GitHub's `releases/latest/download/ai-helper.zip` link works for the asset name used.
+- That GitHub's `releases/latest/download/help-me-ai.zip` link works for the asset name used.
 - The zip layout the Claude chat app expects (folder at the top level vs. files at the root).
 - How Codex's sandbox handles network access and writing to `~/.agents/skills` (which approvals the client will see), and whether `$skill-installer` accepts an arbitrary GitHub repo.
 - Personal skills folder locations on Windows for Claude Code and Codex.
 
-**Inputs needed from the consultant before release:**
-- final skill name
-- GitHub owner/repo name, which replaces `<owner>/ai-skills` in install instructions
-- consultant name and contact for the skill's `metadata`
+**Consultant inputs (decided 2026-10-19):** skill name `help-me-ai`; repo `keyanfayaz/agent-skills`; the consultant summary says "send this to Keyan" (name only, set in `metadata`).
 
 ## 14. Decisions log
 
@@ -315,5 +312,5 @@ These are checked against current official docs while building, and recorded in 
 | Recommendations | Agent judgment against a fixed rubric | No house method; the rubric keeps results comparable |
 | Consultant view | Client-approved summary, client sends | Trust; no services or accounts |
 | Install | One release zip at a fixed "latest" link; agent downloads with built-in OS tools, falls back to browser download | Clients may not have git or Node; one file serves every route |
-| Storage | `~/ai-helper/`, visible, shared across tools | Findable by non-technical clients; tool-agnostic |
-| Name | `ai-helper` (working) | Consultant preference; bare `start` collides with existing skills |
+| Storage | `~/help-me-ai/`, visible, shared across tools | Findable by non-technical clients; tool-agnostic |
+| Name | `help-me-ai` | Memorable, sits next to `/help`; bare `start` collides with existing skills |
