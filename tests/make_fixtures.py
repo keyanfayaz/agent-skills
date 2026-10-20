@@ -188,7 +188,7 @@ def _jordan(home: Path) -> None:
     (data / "reports").mkdir(parents=True)
     first, second = NOW - timedelta(days=24), NOW - timedelta(days=10)
     (data / "backups" / f"{first:%Y-%m-%d}").mkdir(parents=True)
-    (data / "backups" / f"{first:%Y-%m-%d}" / "CLAUDE.md").write_text("")
+    (data / "backups" / f"{first:%Y-%m-%d}" / "claude-CLAUDE.md").write_text("")
     (data / "reports" / f"{first:%Y-%m-%d}-session-1.md").write_text("# Session 1: Getting started\n")
     (data / "reports" / f"{second:%Y-%m-%d}-session-2.md").write_text("# Session 2: Weekly pipeline review skill\n")
     (data / "profile.md").write_text(f"""---
@@ -219,7 +219,7 @@ Boundaries: never contact prospects directly; no customer contract terms in chat
 
 - Tool: Claude Code on macOS.
 - Agreed {second:%Y-%m-%d}: may read personal instructions, settings, skills and the last 60 days of sessions.
-- Added to ~/.claude/CLAUDE.md: "About me" block (backup in ~/help-me-ai/backups/{first:%Y-%m-%d}/CLAUDE.md).
+- Added to ~/.claude/CLAUDE.md: "About me" block (backup in ~/help-me-ai/backups/{first:%Y-%m-%d}/claude-CLAUDE.md).
 - Installed ~/.claude/skills/weekly-pipeline-review/SKILL.md.
 
 ## Path

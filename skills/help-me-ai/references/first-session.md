@@ -32,7 +32,7 @@ Pick the single most useful thing you can finish in about 10 minutes. Start from
 
 If the file already exists, back it up and add your block at the end. Never rewrite, reorder or remove what's there. If they didn't agree to you reading their instructions file, ask before opening it to add your block; if they'd rather you didn't, give them the text and tell them exactly where to paste it. Keep task procedures (a checklist or the steps for one particular job) out of personal instructions — those become a skill.
 
-**If that's already strong,** take the biggest gap from the snapshot that fits in 10 minutes instead — for example, connecting the app they paste from most, a tiny skill for their most repeated request, or moving an exposed key out of their settings (tell them where it is; never repeat it).
+**If that's already strong,** take the biggest gap from the snapshot that fits in 10 minutes instead — for example, connecting the app they paste from most, a tiny skill for their most repeated request, or helping them replace an exposed key (they do it with the service that issued it; tell them where the key sits, never repeat it, and don't edit that file yourself).
 
 Finish by letting them feel the difference: suggest one thing to try in a fresh chat that shows the change working ("start a new chat and ask for this week's update — notice it already knows who it's for").
 

@@ -7,13 +7,7 @@ import unittest
 from pathlib import Path
 
 from make_fixtures import build
-from skillcheck import REPO, SKILL_DIR, parse_frontmatter
-
-
-def section(text: str, title: str) -> str:
-    match = re.search(rf"^## {re.escape(title)}\n(.*?)(?=^## |\Z)", text, re.MULTILINE | re.DOTALL)
-    assert match, f"no section {title!r}"
-    return match.group(1)
+from skillcheck import REPO, SKILL_DIR, parse_frontmatter, section
 
 
 SKILL_MD = (SKILL_DIR / "SKILL.md").read_text()
@@ -71,6 +65,37 @@ class ReviewFixes(unittest.TestCase):
     def test_install_prompt_windows_and_unzipped_downloads(self):
         self.assertIn("curl.exe", README)
         self.assertRegex(README, r"(?i)already unzipped")
+
+
+BUILD_SKILL_TEXT = BUILD_SKILL
+
+
+class CorrectnessReview(unittest.TestCase):
+    def test_quick_win_never_moves_keys_itself(self):
+        quick_win = section(FIRST, "Quick win")
+        self.assertNotIn("moving an exposed key", quick_win)
+        self.assertRegex(quick_win, r"(?i)replace an exposed key")
+
+    def test_not_tried_yet_is_kept_in_the_profile(self):
+        # Chat-app reports live outside the Project; only the profile comes back next session.
+        self.assertRegex(section(SKILL_MD, "Wrap up"), r'(?i)"not tried yet" in the report and in the profile')
+        self.assertRegex(section(SKILL_MD, "Choose the session"), r'(?i)profile.{0,40}"not tried yet"')
+
+    def test_skill_interview_asks_one_thing_per_question(self):
+        items = re.findall(r"^\d+\. .+$", section(BUILD_SKILL_TEXT, "Capture the steps"), re.MULTILINE)
+        self.assertGreaterEqual(len(items), 5)
+        for item in items:
+            self.assertNotRegex(item, r", and (what|who|where|how)\b", item)
+
+    def test_environments_read_before_counting(self):
+        look = section(SKILL_MD, "Look around")
+        self.assertLess(look.index("references/environments.md"), look.index("**Which tool you're in:**"))
+
+    def test_backup_names_say_where_they_came_from(self):
+        self.assertRegex(section(SKILL_MD, "Saving files"), r"(?i)folder it came from")
+
+    def test_project_folder_naming(self):
+        self.assertRegex(ENV, r"(?i)every character other than letters and digits")
 
 
 class FixtureMatchesRealFiles(unittest.TestCase):

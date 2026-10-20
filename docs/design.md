@@ -85,7 +85,7 @@ The agent never needs git, Node or Python to install.
 3. **Pick the session.**
    - No profile → first session (5.4).
    - Profile exists → next pending item on the path.
-   - Path finished, or last checkup more than ~30 days ago → checkup.
+   - Path finished → checkup. If the last checkup was more than ~30 days ago, suggest a checkup first; the client may keep the planned session.
    - Client asks for something specific → the agent fits it in and updates the path.
 4. **Run the session.**
 5. **Wrap up.** Check today's change works (or note it to try in a new session), offer the consultant summary, then show the report, profile changes and any approved summary together and save them after one yes. Name the next session and suggest when to come back.
@@ -256,7 +256,7 @@ agent-skills/
 The repo is a growing collection. Future standalone skills (other offerings, or client-built skills worth reusing generically) are added as siblings under `skills/`.
 
 **Standards:**
-- Agent Skills spec: `name` matches the folder, lowercase and hyphens; `description` ≤ 1024 characters and says what the skill does and when to use it; references one level deep from `SKILL.md`.
+- Agent Skills spec: `name` matches the folder, lowercase and hyphens; `description` ≤ 200 characters (the Claude app's limit; the standard allows 1024) and says what the skill does and when to use it; references one level deep from `SKILL.md`.
 - AGENTS.md at the repo root. Claude Code reads AGENTS.md when no CLAUDE.md exists, so no CLAUDE.md is needed.
 - **No dependencies.** On the client's machine, neither the skill nor anything it builds may require git, Node, Python, or any other install. It works with the agent's own file tools. Where a shell helps, it uses only commands that ship with macOS and Windows (`curl`, `tar`, `unzip`, PowerShell). Backups are plain file copies, and skills built for the client are plain files. Git is only for the consultant, to maintain the repo.
 

@@ -31,11 +31,13 @@ Not everything should be a skill. Say so plainly when something else fits better
 
 Interview them, one question at a time:
 
-1. What usually starts this task, and what do they say when they ask for it?
-2. What goes in — information, files, apps — and where does each come from?
-3. The steps, in order. Read them back and check.
-4. What good output looks like. Ask for a real past example; it's worth more than any description.
-5. What to avoid, and who sees the result.
+1. What usually starts this task?
+2. What do they say when they ask for it? (Their exact words go into the description.)
+3. What goes into it: information, files, apps? Ask where each comes from as a follow-up, not in the same message.
+4. The steps, in order. Read them back and check.
+5. What good output looks like. Ask for a real past example; it's worth more than any description.
+6. What should it avoid?
+7. Who sees the result?
 
 If they already use a checklist or template for this task, keep every item in the skill, in their words; ask before dropping or merging any. Summarise the procedure in a few lines and get a yes before writing anything.
 

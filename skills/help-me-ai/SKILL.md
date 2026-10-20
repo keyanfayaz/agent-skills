@@ -30,14 +30,12 @@ A first session takes 30–45 minutes; later ones 15–30. If the client asked f
 
 ## Look around
 
-Before asking anything, check what *exists* — names and dates only, never contents:
+Read `references/environments.md` first, in every session: it says where each tool keeps these things, what counts as a session, and how to read them efficiently. Then, before asking anything, check what *exists* — names and dates only, never contents:
 
 - **Which tool you're in:** Claude Code, Codex, or the Claude chat app (claude.ai on the web, the desktop app's chat, or mobile).
 - **Their computer** (Claude Code and Codex): operating system; whether personal instructions, settings, a skills folder and session history exist; roughly how many sessions there are from the last 60 days (count files by date; don't open them).
 - **Connected tools** you can see.
 - **A profile from earlier sessions:** `~/help-me-ai/profile.md` on their computer, or a `profile.md` in this Project's files in the chat app. If one exists, read it — it's theirs, made with their agreement — and treat them as a returning client.
-
-Read `references/environments.md` first, in every session: it says where each tool keeps these things and how to read them efficiently.
 
 Then note what you can work with:
 
@@ -76,7 +74,7 @@ Pick the session in this order:
 3. **The path is finished** → checkup.
 4. **Otherwise** → the next unchecked item on their path. But if more than about 30 days have passed since the last checkup (the newest dated levels entry in the profile; the first session's snapshot counts), suggest doing the checkup first, and let them keep the planned session if they prefer.
 
-If the last report has anything marked "not tried yet", ask how it went before anything else. Then tell them in one or two sentences what today's session will do for them and why, and begin. Before starting, read the files listed for that session — and only those:
+If the profile's last Log line marks anything "not tried yet", ask how it went before anything else. Then tell them in one or two sentences what today's session will do for them and why, and begin. Before starting, read the files listed for that session — and only those:
 
 | Session | Read first |
 |---|---|
@@ -128,7 +126,7 @@ On their computer, everything for this program lives in one visible folder, `~/h
   backups/YYYY-MM-DD/                copies of files before you changed them
 ```
 
-- **Backups:** before changing any existing file, copy it into `backups/YYYY-MM-DD/` with the same file name. If two files share a name, put the tool in front (`codex-AGENTS.md`). Say where the backup is in the report.
+- **Backups:** before changing any existing file, copy it into `backups/YYYY-MM-DD/`, named after the folder it came from and the file (`claude-CLAUDE.md`, `codex-AGENTS.md`, `weekly-update-SKILL.md`). Record the original location in the profile's Setup section, and say where the backup is in the report.
 - **Never overwrite** a backup, report or summary: if the name is taken, add `-2`, `-3` and so on before `.md` (or after the backup's folder name).
 - **Secrets:** never back up or change a file that still contains a secret, because the backup would copy it. Walk the client through removing the secret themselves first (for example, moving a key out of a settings file); after that you may back it up and change it.
 - **Where else you may write:** only their personal instructions files, skills folders, settings files (once no secrets are left in them, and never to loosen security on your own), and folders they agreed to — always after showing the change.
@@ -144,7 +142,7 @@ On their computer, everything for this program lives in one visible folder, `~/h
 
 Every session ends with these steps, in order:
 
-1. **Check it works.** Whatever changed today has been tried at least once. Some changes only take effect in a new chat or session (instructions files, for example): ask them to open one, try the request you suggest, and tell you what happened. If they can't right now, note "not tried yet" in the report and check it at the start of the next session.
+1. **Check it works.** Whatever changed today has been tried at least once. Some changes only take effect in a new chat or session (instructions files, for example): ask them to open one, try the request you suggest, and tell you what happened. If they can't right now, note "not tried yet" in the report and in the profile's Log line, and check it at the start of the next session.
 2. **Offer the consultant summary.** Ask first: "Would you like a short summary to send to [consultant]?" — using the name in `metadata.consultant`, or "your consultant" if it's empty. If they say no, go to the next step. If yes, ask "Anything you'd like [consultant] to know?", then draft the whole summary from the summary template, header included, and show all of it. `levels_before` comes from their last summary or, the first time, from the first session's snapshot; `levels_after` copies the newest levels entry in the profile. Let them edit or remove anything.
 3. **Show, then save.** Show these together: the session report in full, exactly as it will be saved (from the report template, mentioning the summary if there is one); a new profile in full, or for an existing one a short list of the changes; and the approved summary if any. Save them all after one yes:
    - **The profile,** following the profile template: changes to About and Setup, a new dated levels entry if you assessed them, path items ticked or added, one Log line, and `skill_version` set to `metadata.version`. Keep everything they added by hand; add any missing section.

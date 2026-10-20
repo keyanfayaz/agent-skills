@@ -3,13 +3,7 @@
 import re
 import unittest
 
-from skillcheck import SKILL_DIR
-
-
-def section(text: str, title: str) -> str:
-    match = re.search(rf"^## {re.escape(title)}\n(.*?)(?=^## |\Z)", text, re.MULTILINE | re.DOTALL)
-    assert match, f"no section {title!r}"
-    return match.group(1)
+from skillcheck import SKILL_DIR, section
 
 
 SKILL_MD = (SKILL_DIR / "SKILL.md").read_text()

@@ -63,6 +63,13 @@ def headings(text: str, level: int = 2) -> list[str]:
     return found
 
 
+def section(text: str, title: str) -> str:
+    """The text under a `## title` heading, up to the next `## ` heading."""
+    match = re.search(rf"^## {re.escape(title)}\n(.*?)(?=^## |\Z)", text, re.MULTILINE | re.DOTALL)
+    assert match, f"no section {title!r}"
+    return match.group(1)
+
+
 def own_file_mentions(text: str) -> set[str]:
     """`references/<file>.md` and `assets/<file>.md` paths in `text` that exist in the skill."""
     mentions = set(re.findall(r"\b(?:references|assets)/[A-Za-z0-9_.-]+\.md\b", text))
