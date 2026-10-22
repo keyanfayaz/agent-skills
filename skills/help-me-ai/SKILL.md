@@ -2,7 +2,7 @@
 name: help-me-ai
 description: Personal AI coach for Claude or Codex. Learns how you work, makes one improvement right away, then guides short sessions. Use when the user runs /help-me-ai or wants help getting better at AI.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   consultant: "Keyan"
 ---
 
