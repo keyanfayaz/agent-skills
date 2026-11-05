@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 from make_fixtures import build
-from skillcheck import REPO, SKILL_DIR, parse_frontmatter, section
+from skillcheck import COACHING, REPO, SKILL_DIR, parse_frontmatter, section
 
 
 SKILL_MD = (SKILL_DIR / "SKILL.md").read_text()
@@ -15,7 +15,7 @@ FIRST = (SKILL_DIR / "references" / "first-session.md").read_text()
 ENV = (SKILL_DIR / "references" / "environments.md").read_text()
 SETUP = (SKILL_DIR / "references" / "build-setup.md").read_text()
 BUILD_SKILL = (SKILL_DIR / "references" / "build-skill.md").read_text()
-README = (REPO / "README.md").read_text()
+README = (COACHING / "README.md").read_text()
 
 
 class ReviewFixes(unittest.TestCase):

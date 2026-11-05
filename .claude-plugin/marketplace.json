@@ -1,0 +1,29 @@
+{
+  "name": "keyan-agent-skills",
+  "owner": {
+    "name": "Keyan"
+  },
+  "metadata": {
+    "description": "Reusable engineering, AI coaching, and project management plugins."
+  },
+  "plugins": [
+    {
+      "name": "engineering",
+      "description": "Reusable coding, PR-writing, and preference setup skills.",
+      "version": "0.1.0",
+      "source": "./plugins/engineering"
+    },
+    {
+      "name": "ai-coaching",
+      "description": "Help Me AI coaching with standalone skill compatibility.",
+      "version": "0.1.1",
+      "source": "./plugins/ai-coaching"
+    },
+    {
+      "name": "project-management",
+      "description": "Project planning and weekly review workflows with lightweight templates.",
+      "version": "0.1.0",
+      "source": "./plugins/project-management"
+    }
+  ]
+}

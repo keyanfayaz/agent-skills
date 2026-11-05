@@ -1,0 +1,17 @@
+{
+  "name": "project-management",
+  "version": "0.1.0",
+  "description": "Project planning and weekly review workflows with lightweight templates.",
+  "author": {
+    "name": "Keyan"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Project Management",
+    "shortDescription": "Small plans and weekly reviews",
+    "longDescription": "Project planning and weekly review workflows with lightweight templates.",
+    "developerName": "Keyan",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

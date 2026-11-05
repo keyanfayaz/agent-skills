@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "engineering",
+  "version": "0.1.0",
+  "description": "Reusable coding, PR-writing, and preference setup skills.",
+  "author": {
+    "name": "Keyan"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Engineering",
+        "shortDescription": "Simple code and concise PRs",
+        "longDescription": "Reusable coding, PR-writing, and preference setup skills.",
+        "developerName": "Keyan",
+        "category": "Developer Tools",
+        "capabilities": []
+      }
+    }
+  }
+}

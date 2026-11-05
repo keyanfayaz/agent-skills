@@ -1,4 +1,5 @@
 import subprocess
+import platform
 import tempfile
 import unittest
 import zipfile
@@ -28,12 +29,14 @@ class Package(unittest.TestCase):
         }
         self.assertEqual(files, on_disk)
 
-    def test_zip_extracts_with_tar(self):
+    def test_zip_extracts_with_system_tools(self):
         with tempfile.TemporaryDirectory() as tmp:
             archive = build(Path(tmp))
             dest = Path(tmp) / "out"
             dest.mkdir()
-            subprocess.run(["tar", "-xf", str(archive), "-C", str(dest)], check=True)
+            command = (["tar", "-xf", str(archive), "-C", str(dest)] if platform.system() == "Darwin"
+                       else ["unzip", "-q", str(archive), "-d", str(dest)])
+            subprocess.run(command, check=True)
             self.assertTrue((dest / "help-me-ai" / "SKILL.md").is_file())
 
     def test_release_workflow(self):

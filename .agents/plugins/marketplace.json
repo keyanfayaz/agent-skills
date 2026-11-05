@@ -1,0 +1,32 @@
+{
+  "name": "keyan-agent-skills",
+  "interface": {
+    "displayName": "Agent Skills"
+  },
+  "plugins": [
+    {
+      "name": "engineering",
+      "source": {
+        "source": "local",
+        "path": "./plugins/engineering"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "ai-coaching",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ai-coaching"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "project-management",
+      "source": {
+        "source": "local",
+        "path": "./plugins/project-management"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

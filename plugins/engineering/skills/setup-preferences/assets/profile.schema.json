@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Skills preferences",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "writing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "bullets",
+            "prose"
+          ]
+        },
+        "detail": {
+          "type": "string",
+          "enum": [
+            "brief",
+            "balanced",
+            "thorough"
+          ]
+        },
+        "sentences_per_bullet": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
+        }
+      }
+    },
+    "engineering": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "constraint_markers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "subtract_before_add": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

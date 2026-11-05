@@ -1,0 +1,19 @@
+name: Toolkit checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -B -m unittest discover tests
+      - run: scripts/build-zip.sh dist
+      - run: python3 -B scripts/build-plugins.py dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skill-and-plugin-packages
+          path: dist/*.zip

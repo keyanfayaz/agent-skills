@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "project-management",
+  "version": "0.1.0",
+  "description": "Project planning and weekly review workflows with lightweight templates.",
+  "author": {
+    "name": "Keyan"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Project Management",
+        "shortDescription": "Small plans and weekly reviews",
+        "longDescription": "Project planning and weekly review workflows with lightweight templates.",
+        "developerName": "Keyan",
+        "category": "Productivity",
+        "capabilities": []
+      }
+    }
+  }
+}

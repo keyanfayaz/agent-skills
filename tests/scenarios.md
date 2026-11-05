@@ -13,7 +13,7 @@ python3 tests/make_fixtures.py B "$T/home"     # B, C or D (E uses B's home); sk
 
 Start a fresh agent with this prompt (fill in the tool, `<tmp>` and the persona card):
 
-> You are the agent in **<tool>**, running the `help-me-ai` skill for a client. Treat `<tmp>/home` as the home folder (`~`): read and write nothing outside it, apart from reading the skill's own files in `skills/help-me-ai/` of this repo. Follow `skills/help-me-ai/SKILL.md` exactly, as if the client had just typed `/help-me-ai`. Where the skill says to check online docs, say what you would check instead of browsing.
+> You are the agent in **<tool>**, running the `help-me-ai` skill for a client. Treat `<tmp>/home` as the home folder (`~`): read and write nothing outside it, apart from reading the skill's own files in `plugins/ai-coaching/skills/help-me-ai/` of this repo. Follow `plugins/ai-coaching/skills/help-me-ai/SKILL.md` exactly, as if the client had just typed `/help-me-ai`. Where the skill says to check online docs, say what you would check instead of browsing.
 >
 > Play the client too, but only from the persona card below: answer as they would, briefly, using the card's facts and decisions; never help the agent or volunteer information it didn't ask for.
 >

@@ -18,7 +18,7 @@ jobs:
 
       - name: Check the tag matches the skill version
         run: |
-          version=$(sed -n 's/^  version: "\(.*\)"$/\1/p' skills/help-me-ai/SKILL.md)
+          version=$(sed -n 's/^  version: "\(.*\)"$/\1/p' plugins/ai-coaching/skills/help-me-ai/SKILL.md)
           if [ "v$version" != "$GITHUB_REF_NAME" ]; then
             echo "Tag $GITHUB_REF_NAME does not match SKILL.md version $version" >&2
             exit 1

@@ -5,7 +5,8 @@ import subprocess
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-SKILL_DIR = REPO / "skills" / "help-me-ai"
+COACHING = REPO / "plugins" / "ai-coaching"
+SKILL_DIR = COACHING / "skills" / "help-me-ai"
 
 # Commands a client's machine may not have. The skill must never tell an agent to run them.
 FORBIDDEN_CLIENT_COMMANDS = [

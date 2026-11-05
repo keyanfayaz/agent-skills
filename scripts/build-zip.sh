@@ -5,11 +5,12 @@ set -euo pipefail
 
 out=${1:?usage: build-zip.sh OUT_DIR}
 root=$(cd "$(dirname "$0")/.." && pwd)
-skill="$root/skills/help-me-ai"
+skills="$root/plugins/ai-coaching/skills"
+skill="$skills/help-me-ai"
 [ -f "$skill/SKILL.md" ] || { echo "missing $skill/SKILL.md" >&2; exit 1; }
 
 mkdir -p "$out"
 out=$(cd "$out" && pwd)
 rm -f "$out/help-me-ai.zip"
-(cd "$root/skills" && zip -r -X -q "$out/help-me-ai.zip" help-me-ai -x '*.DS_Store')
+(cd "$skills" && zip -r -X -q "$out/help-me-ai.zip" help-me-ai -x '*.DS_Store')
 echo "$out/help-me-ai.zip"

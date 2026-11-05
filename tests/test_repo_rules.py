@@ -23,13 +23,9 @@ class FrontmatterParsing(unittest.TestCase):
 
 
 class RepoRules(unittest.TestCase):
-    def test_no_tooling_folder_names(self):
-        word = "super" + "powers"  # split so this file doesn't match itself
-        offenders = [
-            str(p) for p in tracked_files()
-            if word in str(p).lower()
-            or word in p.read_text(errors="ignore").lower()
-        ]
+    def test_no_local_tooling_state_is_shipped(self):
+        forbidden = {".plans", "node_modules", "__pycache__", ".DS_Store"}
+        offenders = [str(p) for p in tracked_files() if forbidden.intersection(p.parts)]
         self.assertEqual(offenders, [])
 
     def test_client_files_have_no_dependency_commands(self):

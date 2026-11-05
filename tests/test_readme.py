@@ -1,14 +1,14 @@
 import re
 import unittest
 
-from skillcheck import REPO, headings
+from skillcheck import COACHING, REPO, headings
 
 DOWNLOAD_URL = "https://github.com/keyanfayaz/agent-skills/releases/latest/download/help-me-ai.zip"
 
 
 class Readme(unittest.TestCase):
     def setUp(self):
-        self.text = (REPO / "README.md").read_text()
+        self.text = (COACHING / "README.md").read_text()
         self.client_part = self.text.split("## For maintainers", 1)[0]
 
     def test_install_prompt_present(self):

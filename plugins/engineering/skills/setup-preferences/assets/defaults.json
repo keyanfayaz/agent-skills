@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "writing": {
+    "format": "auto",
+    "detail": "balanced",
+    "sentences_per_bullet": 2
+  },
+  "engineering": {
+    "constraint_markers": [],
+    "subtract_before_add": true
+  }
+}

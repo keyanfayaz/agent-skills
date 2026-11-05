@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "writing": {
+    "format": "bullets",
+    "detail": "brief",
+    "sentences_per_bullet": 1
+  },
+  "engineering": {
+    "constraint_markers": [
+      "KEEP",
+      "IMPORTANT"
+    ],
+    "subtract_before_add": true
+  }
+}

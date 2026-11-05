@@ -1,0 +1,17 @@
+{
+  "name": "engineering",
+  "version": "0.1.0",
+  "description": "Reusable coding, PR-writing, and preference setup skills.",
+  "author": {
+    "name": "Keyan"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Engineering",
+    "shortDescription": "Simple code and concise PRs",
+    "longDescription": "Reusable coding, PR-writing, and preference setup skills.",
+    "developerName": "Keyan",
+    "category": "Developer Tools",
+    "capabilities": []
+  }
+}

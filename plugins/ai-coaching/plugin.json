@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-coaching",
+  "version": "0.1.1",
+  "description": "Help Me AI coaching with standalone skill compatibility.",
+  "author": {
+    "name": "Keyan"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "AI Coaching",
+        "shortDescription": "Practical AI coaching",
+        "longDescription": "Help Me AI coaching with standalone skill compatibility.",
+        "developerName": "Keyan",
+        "category": "Productivity",
+        "capabilities": []
+      }
+    }
+  }
+}
