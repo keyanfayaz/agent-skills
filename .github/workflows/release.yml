@@ -1,0 +1,33 @@
+name: Release
+
+# Pushing a version tag (v0.1.0) builds help-me-ai.zip and creates the release
+# with the zip already attached, so the "latest" download link never points at
+# a release without it.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check the tag matches the skill version
+        run: |
+          version=$(sed -n 's/^  version: "\(.*\)"$/\1/p' skills/help-me-ai/SKILL.md)
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match SKILL.md version $version" >&2
+            exit 1
+          fi
+
+      - name: Build help-me-ai.zip
+        run: scripts/build-zip.sh dist
+
+      - name: Create the release with the zip attached
+        run: gh release create "$GITHUB_REF_NAME" dist/help-me-ai.zip --title "help-me-ai ${GITHUB_REF_NAME#v}" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}
