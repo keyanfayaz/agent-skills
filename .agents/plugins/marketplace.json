@@ -1,0 +1,16 @@
+{
+  "name": "keyan-agent-skills",
+  "interface": {
+    "displayName": "Agent Skills"
+  },
+  "plugins": [
+    {
+      "name": "engineering",
+      "source": {
+        "source": "local",
+        "path": "./plugins/engineering"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

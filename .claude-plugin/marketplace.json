@@ -1,0 +1,17 @@
+{
+  "name": "keyan-agent-skills",
+  "owner": {
+    "name": "Keyan"
+  },
+  "metadata": {
+    "description": "Engineering workflows and preferences."
+  },
+  "plugins": [
+    {
+      "name": "engineering",
+      "description": "Create pull requests and reference engineering preferences.",
+      "version": "0.2.0",
+      "source": "./plugins/engineering"
+    }
+  ]
+}
