@@ -1,7 +1,7 @@
 {
   "name": "engineering",
-  "version": "0.2.0",
-  "description": "Create pull requests and reference engineering preferences.",
+  "version": "0.3.0",
+  "description": "Review code changes, verify application behavior, and create pull requests.",
   "author": {
     "name": "Keyan"
   }

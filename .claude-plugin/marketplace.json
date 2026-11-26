@@ -9,8 +9,8 @@
   "plugins": [
     {
       "name": "engineering",
-      "description": "Create pull requests and reference engineering preferences.",
-      "version": "0.2.0",
+      "description": "Review code changes, verify application behavior, and create pull requests.",
+      "version": "0.3.0",
       "source": "./plugins/engineering"
     }
   ]
