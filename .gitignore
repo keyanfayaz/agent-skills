@@ -3,3 +3,8 @@
 .DS_Store
 dist/
 __pycache__/
+.local/
+local-evidence/
+provenance.local.*
+.env
+.env.*
