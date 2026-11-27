@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "engineering",
-  "version": "0.3.0",
-  "description": "Review code changes, verify application behavior, and create pull requests.",
+  "version": "0.4.0",
+  "description": "Review changes, verify Linear tickets, smoke-test builds, and create pull requests.",
   "author": {
     "name": "Keyan"
   },
@@ -11,7 +11,7 @@
       "interface": {
         "displayName": "Engineering",
         "shortDescription": "Code review, app verification, and PRs",
-        "longDescription": "Review code changes, verify application behavior, and create pull requests.",
+        "longDescription": "Review changes, verify Linear tickets, smoke-test builds, and create pull requests.",
         "developerName": "Keyan",
         "category": "Developer Tools",
         "capabilities": []
