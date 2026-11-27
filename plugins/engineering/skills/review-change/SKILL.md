@@ -25,6 +25,6 @@ Avoid speculative findings without a plausible trigger and impact.
 
 ## Verify and hand off
 
-Run relevant existing checks. For affected application flows, use `verify-app` if available, passing the criteria and project verification profile. Report missing runtime evidence explicitly.
+Run relevant existing checks. When the review calls for runtime verification of a ticket, pass its ID and the target build to `verify` if available. For a targeted app check with criteria supplied directly, existing `verify-app` workflows still apply. Report missing runtime evidence explicitly.
 
 Deliver critical issues first, then other findings in severity order, followed by a concise ticket-alignment assessment, verification evidence, and material remaining gaps. Say plainly when no findings were found.

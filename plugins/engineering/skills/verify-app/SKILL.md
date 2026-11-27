@@ -1,6 +1,6 @@
 ---
 name: verify-app
-description: Verify a website or application against acceptance criteria using relevant checks, functional flows, and screenshot evidence. Use after app changes or for requested functional QA.
+description: Run an existing verify-app workflow or check a targeted app behavior against criteria supplied directly by the caller.
 ---
 
 # Verify application behavior
