@@ -11,5 +11,6 @@ These are observations from existing local files, adapted into reusable guidance
 | P5 | Review against the request, acceptance criteria, and non-goals. Prioritize concrete correctness and regression impact; provide a trigger, location, impact, and fix direction. | Existing personal review skill and template. |
 | P6 | Verify the observable behavior and show evidence. Report compile results separately from runtime tests; name blocked prerequisites. Use screenshots for relevant visual behavior. | Existing personal verification skill and user-owned project verification guide. |
 | P7 | Keep generated writing restrained, direct, and free of filler. | Local memory and writing workflow, originally scoped to business writing. Carry the restraint preference cautiously; project voice rules stay with that project. |
+| P8 | Keep workflows lean and make the smallest code change that meets the request. | Explicit preference for repo setup and engineering work. |
 
 The reusable skills here are concise adaptations of the personal review and verification workflows. Project implementations, commercial facts, detailed brand rules, internal instructions, and runtime memory content are not bundled.

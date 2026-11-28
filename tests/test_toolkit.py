@@ -53,7 +53,8 @@ class Toolkit(unittest.TestCase):
             plugin = Path(tmp) / "packaged/engineering"
             for manifest in ("plugin.json", ".codex-plugin/plugin.json", ".claude-plugin/plugin.json"):
                 self.assertTrue((plugin / manifest).is_file(), manifest)
-            for name in ("create-pr", "review-change", "verify-app"):
+            for skill_manifest in sorted((REPO / "plugins/engineering/skills").glob("*/SKILL.md")):
+                name = skill_manifest.parent.name
                 with self.subTest(skill=name), ZipFile(Path(tmp) / (name + ".zip")) as standalone:
                     standalone.extractall(Path(tmp) / "standalone")
                     skill = Path(tmp) / "standalone" / name
