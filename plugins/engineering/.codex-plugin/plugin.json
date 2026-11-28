@@ -1,15 +1,15 @@
 {
   "name": "engineering",
-  "version": "0.3.0",
-  "description": "Review code changes, verify application behavior, and create pull requests.",
+  "version": "0.4.0",
+  "description": "Set up repositories, review changes, verify apps, and create pull requests.",
   "author": {
     "name": "Keyan"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Engineering",
-    "shortDescription": "Code review, app verification, and PRs",
-    "longDescription": "Review code changes, verify application behavior, and create pull requests.",
+    "shortDescription": "Repo setup, review, verification, and PRs",
+    "longDescription": "Set up repositories, review changes, verify apps, and create pull requests.",
     "developerName": "Keyan",
     "category": "Developer Tools",
     "capabilities": []
